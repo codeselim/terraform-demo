@@ -1,3 +1,13 @@
+variable "region" {
+  default = "eu-central-1"
+  description = "The AWS region."
+}
+
+variable "environment" {
+  default = "development"
+  description = "The name of our environment, i.e. development."
+}
+
 variable "AWS_ACCESS_KEY_ID" {
   description = "AWS access key id, env variable"
 }
@@ -10,19 +20,6 @@ variable "AWS_SESSION_TOKEN" {
 variable "AWS_ASSUMRED_ROLE_ARN" {
   description = "AWS assumed role arn, env variable"
 }
-
-variable "environment" {
-  default = "Almighty-Environment"
-  description = "The environment that the infrastructure is running on e.g. development, production, almighty...etc"
-}
-
-variable "region" {
-  default = "eu-central-1"
-  description = "The AWS region."
-}
-
-
-data "aws_availability_zones" "availability_zones" {}
 
 variable "public_subnets" {
   default = [ "10.0.24.0/24", "10.0.50.0/24" ]
@@ -48,7 +45,8 @@ variable "servers_ami" {
   description = "The bastion host AMIs."
 }
 
-variable "availability_zones" {
-  type = "list"
-  default = ["eu-central-1a", "eu-central-1b"]
+variable "vpc_cidr" {
+  type = "string"
+  default = "10.0.0.0/16"
+  description = "The Development VPC CIDR"
 }
