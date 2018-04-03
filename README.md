@@ -5,13 +5,13 @@ Every step in this tutorial is presented with a tagged commit. To switch between
 
 `$ git checkout tags/<tag_name>` (e.g. git checkout tags/step-2)
 
-## step2
+## step-2
 
 Refactored code, input variables separated.
 
 Usage of helper functions : element, lookup, count ...etc
 
-## step1
+## step-1
 
 All the infrastructure is define in one terraform file `infrastructure.tf`.
 
